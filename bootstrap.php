@@ -27,8 +27,8 @@ if(!COCKPIT_ADMIN && !COCKPIT_REST) {
       });
 
       // COLLECTIONS
-      $twig_funcs[] = new Twig_SimpleFunction('collection', function($name, $query = [], $array = true){
-        $items = collection($name)->find($query);
+      $twig_funcs[] = new Twig_SimpleFunction('collection', function($name, $query = [], $sort = [], $array = true){
+        $items = collection($name)->find($query)->sort($sort);
         return $array ? $items->toArray() : $items;
       });
 

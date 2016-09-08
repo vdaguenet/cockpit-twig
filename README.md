@@ -57,6 +57,14 @@ Query a collection:
 {% endfor %}
 ```
 
+Sort a collection:
+
+```php
+{% for item in collection('projects', {active: 1}, {created: -1}) %}
+  {{ item.name }}
+{% endfor %}
+```
+
 #### Regions
 
 Render the entire region, with template:
